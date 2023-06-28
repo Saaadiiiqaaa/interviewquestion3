@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: cornflowerblue;
+        }
+        pre{
+            background-color: bisque;
+        }
+        p{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>What are promises? why do we need them </h1>
+           <p> promise is a javascript object that links both producing code and consuming code<br>
+        producing code is the code that take some time <br>
+    consuming code is the code that waits for the results<br>
+   java script promise object can be pending,fulfilled or rejected
+while promise is in pending state ....it results in undefined<br>
+whuile promise is in fulfilled state...it results in a value<br>
+while promise is i9n rejected satte....it results in a error</p>
+<pre>
+    let mypromise=   new Promise (function(res,rej){
+        let x=2;
+        if(x>1){
+            res("true")
+        }
+        else{
+            rej("false")
+        }
+    });
+    mypromise.then(
+        function(value){console.log(value);},
+        function(error){console.log(error);}
+    );
+    <p>promises is used to handle the asynchronous javascript earlier callbacks were used but multiple <br>
+        callbacks would creat callback hell leading to unmanageable code due to which promises were introduce to make simpler code</p>
+</pre>
+    </div>
+    <div>
+        <h1>what is promise chaining?</h1>
+        <p>
+           promise chaining is a technique used to perform series of asynchronous operations<br>
+           in an specific order using promises ,it invloves multiple .then method on a promise to <br>
+           handle the result and return a new promise for the next operation in the chain
+                  
+        </p>
+        <pre>
+            function mypromise(alpha,time){
+            return new Promise((res)=>{
+             setTimeout(()=>{
+                console.log(alpha);
+                res("prmsie resolved ");
+             },time)
+            })
+            
+            }
+            function alphafunc(){
+                mypromise("a",2000)
+                .then(()=>mypromise("i",3000))
+                .then(()=>mypromise("e"),1000)
+            }
+            alphafunc()</pre>
+        
+        
+    </div>
+    <div><h1>what is DOM</h1>
+    <p> when a web page is loaded a browser create a
+         Document object model The DOM is a tree-like structure, with each node in the tree <br>
+         representing a different part of the document. The root node of the tree represents the entire document, <br>
+         and the child nodes of the root node represent the different elements of the document.</p></div> 
+    <div><h1>what are closures<h1>
+    <p>
+        closures rae the js feature where inner functions has acces to the outer functions's variable<br>
+        it has three scope chains :-<br>
+        1. acces to its own scope <br>
+        2.access to outer function scope <br>
+        3. acces to global variable
+    </p>
+<pre>
+    let a=20;
+function outerfiunc(){
+    let b=7;
+    function innerfunc(){
+        let c=8;
+        console.log(c);
+        console.log(b);
+        console.log(a);
+    }
+    innerfunc()
+}
+outerfiunc()
+</pre></div>
+    <div> <h1>what are different operators in js ?</h1>
+    <P> arithmatic operators---> +,-,/,*<br>
+    assingnment operators---> =,+=,-=,/=,*=<br>
+comparizon operators--->==,===,>,<,!=,!==<br>
+logical operators--> &&,||,!<br>
+bitwise operator-->&,|,~,^,<<,>></p>
+        </div>
+        <div><h1>what are objects in js </h1>
+        <p>objects is a conatiner for name values called properties and method  </p>
+       <pre>
+        const person={
+            name:"sadiqa",
+            batch:"ea23",
+            age:23
+        };
+       </pre>
+    <p>different ways to create objects are <br>
+        using object literals:- let person={name:"hello",age:23};
+        using new keyword:- const person =new Object(); person.name="sadiqa";person.age=23;
+    </p></div>
+
+    <div>
+        
+</body>
+</html>
